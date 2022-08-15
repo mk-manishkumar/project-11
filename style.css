@@ -30,8 +30,8 @@
   cursor: pointer;
 }
 
-.list{
-    list-style-type: none;
+.list {
+  list-style-type: none;
 }
 
 /* navbar */
@@ -205,7 +205,6 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
 }
 
 .pricing-card {
@@ -263,8 +262,12 @@
   margin-top: 0.8rem;
 }
 
-.btn-pricing{
-    margin-top: 1rem;
+.btn-pricing {
+  margin-top: 1rem;
+}
+
+.btn-middle {
+  padding: 1rem 1.3rem;
 }
 
 .pricing-card:hover {
@@ -337,11 +340,14 @@
 
 .footer {
   background: url(assets/footer-bg.svg);
+  background-size: cover;
   margin-top: 8rem;
   color: #ffffff;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
   padding: 4rem 0;
+  align-items: center;
+  height: max-content;
 }
 
 .footer-left {
@@ -355,10 +361,16 @@
 
 .footer-left p {
   margin-top: 2rem;
+  /* width: 50%; */
 }
 
 .footer-right {
   margin-right: 10%;
+}
+
+.footer-right button {
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
 /* bottom-footer */
@@ -396,9 +408,12 @@
 }
 
 .footer-navbar div:last-child ul {
-  display: flex;
-  justify-content: center;
-  gap: 1.3rem;
+  margin-top: 0.8rem;
+}
+
+.footer-navbar div:last-child ul li {
+  display: inline;
+  margin-right: 10px;
 }
 
 .footer-navbar div:last-child ul li img {
@@ -541,12 +556,25 @@
     font-size: 2rem;
   }
 
+  .footer-navbar {
+    display: block;
+  }
+
+  .footer-navbar .list {
+    margin-bottom: 2rem;
+  }
+
+  .footer-navbar .list:nth-child(4) {
+    display: flex;
+  }
+
   .footer-navbar li {
     font-size: 0.8rem;
   }
 
   .footer-navbar div:last-child ul li img {
     width: 1.2rem;
+    display: inline;
   }
 
   .footer-left h1 {
@@ -554,9 +582,22 @@
   }
 }
 
-@media (max-with: 490px) {
+@media (max-width: 490px) {
+  .footer {
+    grid-template-columns: 12fr;
+    text-align: center;
+  }
+
+  .footer-right {
+    margin-right: 0;
+  }
+
   .footer-left {
-    margin-left: 0px;
+    margin-left: 0;
+  }
+
+  .footer-left p {
+    margin: auto;
   }
 
   .pricing-card {
@@ -564,7 +605,6 @@
   }
 
   .card-heading h4 {
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 1.8rem;
   }
 }
